@@ -1,3 +1,4 @@
 CAPS_WORD_ENABLE = yes
 EXTRAKEY_ENABLE  = yes
 MOUSEKEY_ENABLE  = yes
+USER_NAME := halcyon_modules

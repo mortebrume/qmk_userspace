@@ -309,3 +309,30 @@ bool caps_word_press_user(uint16_t keycode) {
         default: return false; // Deactivate Caps Word.
     }
 }
+
+#if defined(HALCYON_ENABLE)
+
+const uint16_t left_halcyon_buttons[10][5] = {
+    [0] = {KC_MUTE, _______, _______, _______, _______},
+    [1] = {_______, _______, _______, _______, _______},
+    [2] = {_______, _______, _______, _______, _______},
+};
+
+const uint16_t right_halcyon_buttons[10][5] = {
+    [0] = {KC_MUTE, _______, _______, _______, _______},
+    [1] = {_______, _______, _______, _______, _______},
+    [2] = {_______, _______, _______, _______, _______},
+};
+
+#endif
+
+#if defined(ENCODER_MAP_ENABLE)
+const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
+    [0] = {ENCODER_CCW_CW(KC_VOLD, KC_VOLU), ENCODER_CCW_CW(KC_VOLD, KC_VOLU), ENCODER_CCW_CW(KC_PGUP, KC_PGDN),
+           ENCODER_CCW_CW(KC_PGUP, KC_PGDN)},
+    [1] = {ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(_______, _______),
+           ENCODER_CCW_CW(_______, _______)},
+    [2] = {ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(_______, _______),
+           ENCODER_CCW_CW(_______, _______)},
+};
+#endif
