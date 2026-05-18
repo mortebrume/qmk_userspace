@@ -70,12 +70,12 @@
 //  + Escape under the left thumb (direct access)
 // Highly recommended for Vim users, obviously. :-)
 
-// #define VIM_NAVIGATION
+#define VIM_NAVIGATION
 
 // Uncomment the following line to enable shift as a pinky HRM.
 // Useful for combined shortcuts, but NOT MEANT to type text!
 
-// #define HRM_SHIFT
+#define HRM_SHIFT
 
 // [Experimental]
 // Uncomment the following line to enable the "mod-hold behavior" on the left
@@ -112,9 +112,9 @@
 // base layer. Ignored on smaller boards where the outer column doesn't exist.
 // Uncomment and edit to customize. Defaults match the Selenium specification.
 
-// #define OC_TL  KC_TAB
-// #define OC_TR  KC_BSPC
-// #define OC_ML  KC_ESC
-// #define OC_MR  KC_ENT
-// #define OC_BL  KC_LSFT
-// #define OC_BR  KC_RSFT
+#define OC_TL KC_F9
+#define OC_TR KC_PSCR
+#define OC_ML KC_TAB
+#define OC_MR KC_F12
+#define OC_BL KC_F8
+#define OC_BR KC_F3
