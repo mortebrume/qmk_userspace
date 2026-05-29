@@ -336,3 +336,21 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
            ENCODER_CCW_CW(_______, _______)},
 };
 #endif
+
+#define SCALE(c) ((uint8_t)((c) * RGB_BRIGHTNESS / 255))
+
+void keyboard_post_init_user(void) {
+    rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
+}
+
+bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+    for (uint8_t i = led_min; i < led_max; i++) {
+        if (g_led_config.flags[i] & LED_FLAG_UNDERGLOW) {
+            // rgb_matrix_set_color(i, SCALE(0xB9), SCALE(0xD9), SCALE(0xE6)); // #b9d9e6
+            rgb_matrix_set_color(i, SCALE(0xC9), SCALE(0xCB), SCALE(0xE3)); // #c9cbe3
+        } else {
+            rgb_matrix_set_color(i, SCALE(0xC0), SCALE(0x5D), SCALE(0xC0)); // #c05dc0
+        }
+    }
+    return false;
+}

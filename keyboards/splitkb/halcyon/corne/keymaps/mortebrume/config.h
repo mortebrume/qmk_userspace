@@ -39,3 +39,7 @@
 // QMK per-key hold-tap settings
 #define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
 #define TAPPING_TERM_PER_KEY
+
+#define RGB_MATRIX_TIMEOUT 60000
+#define RGB_MATRIX_SLEEP
+#define RGB_BRIGHTNESS 128
