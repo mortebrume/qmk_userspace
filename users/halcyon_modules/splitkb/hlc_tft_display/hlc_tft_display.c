@@ -285,7 +285,8 @@ bool module_post_init_kb(void) {
 bool display_module_housekeeping_task_kb(bool second_display) {
     if(!display_module_housekeeping_task_user(second_display)) { return false; }
 
-    if(second_display) {
+    // Run the Game of Life animation regardless of which display this is.
+    {
         static uint32_t last_draw = 0;
         static bool second_display_set = false;
         static uint32_t previous_matrix_activity_time = 0;
@@ -309,11 +310,6 @@ bool display_module_housekeeping_task_kb(bool second_display) {
 
             last_draw = timer_read32();
         }
-    }
-
-    // Update display information (layers, numlock, etc.)
-    if(!second_display) {
-        update_display();
     }
 
     // Move surface to lcd
